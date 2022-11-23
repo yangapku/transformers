@@ -1104,11 +1104,11 @@ class ChineseCLIPForPreTraining(ChineseCLIPPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import BertTokenizer, ChineseCLIPForPreTraining
+        >>> from transformers import ChineseCLIPTokenizer, ChineseCLIPForPreTraining
         >>> import torch
 
-        >>> tokenizer = BertTokenizer.from_pretrained("OFA-Sys/chinese-clip-vit-base-patch16")
-        >>> model = ChineseCLIPForPreTraining.from_pretrained("OFA-Sys/chinese-clip-vit-base-patch16")
+        >>> tokenizer = ChineseCLIPTokenizer.from_pretrained("chinese_clip-base-uncased")
+        >>> model = ChineseCLIPForPreTraining.from_pretrained("chinese_clip-base-uncased")
 
         >>> inputs = tokenizer("Hello, my dog is cute", return_tensors="pt")
         >>> outputs = model(**inputs)
@@ -1452,11 +1452,11 @@ class ChineseCLIPForNextSentencePrediction(ChineseCLIPPreTrainedModel):
         Example:
 
         ```python
-        >>> from transformers import BertTokenizer, ChineseCLIPForNextSentencePrediction
+        >>> from transformers import ChineseCLIPTokenizer, ChineseCLIPForNextSentencePrediction
         >>> import torch
 
-        >>> tokenizer = BertTokenizer.from_pretrained("OFA-Sys/chinese-clip-vit-base-patch16")
-        >>> model = ChineseCLIPForNextSentencePrediction.from_pretrained("OFA-Sys/chinese-clip-vit-base-patch16")
+        >>> tokenizer = ChineseCLIPTokenizer.from_pretrained("chinese_clip-base-uncased")
+        >>> model = ChineseCLIPForNextSentencePrediction.from_pretrained("chinese_clip-base-uncased")
 
         >>> prompt = "In Italy, pizza served in formal settings, such as at a restaurant, is presented unsliced."
         >>> next_sentence = "The sky is blue due to the shorter wavelength of blue light."
