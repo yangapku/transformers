@@ -170,6 +170,12 @@ _import_structure = {
     "models.byt5": ["ByT5Tokenizer"],
     "models.camembert": ["CAMEMBERT_PRETRAINED_CONFIG_ARCHIVE_MAP", "CamembertConfig"],
     "models.canine": ["CANINE_PRETRAINED_CONFIG_ARCHIVE_MAP", "CanineConfig", "CanineTokenizer"],
+    "models.chinese_clip": [
+        "CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP",
+        "ChineseCLIPConfig",
+        "ChineseCLIPTextConfig",
+        "ChineseCLIPVisionConfig",
+    ],
     "models.clip": [
         "CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP",
         "CLIPConfig",
@@ -177,14 +183,6 @@ _import_structure = {
         "CLIPTextConfig",
         "CLIPTokenizer",
         "CLIPVisionConfig",
-    ],
-    "models.chinese_clip": [
-        "CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP",
-        "ChineseCLIPConfig",
-       
-        "ChineseCLIPTextConfig",
-       
-        "ChineseCLIPVisionConfig",
     ],
     "models.clipseg": [
         "CLIPSEG_PRETRAINED_CONFIG_ARCHIVE_MAP",
@@ -3375,6 +3373,12 @@ if TYPE_CHECKING:
     from .models.byt5 import ByT5Tokenizer
     from .models.camembert import CAMEMBERT_PRETRAINED_CONFIG_ARCHIVE_MAP, CamembertConfig
     from .models.canine import CANINE_PRETRAINED_CONFIG_ARCHIVE_MAP, CanineConfig, CanineTokenizer
+    from .models.chinese_clip import (
+        CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP,
+        ChineseCLIPConfig,
+        ChineseCLIPTextConfig,
+        ChineseCLIPVisionConfig,
+    )
     from .models.clip import (
         CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP,
         CLIPConfig,
@@ -3382,14 +3386,6 @@ if TYPE_CHECKING:
         CLIPTextConfig,
         CLIPTokenizer,
         CLIPVisionConfig,
-    )
-    from .models.chinese_clip import (
-        CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP,
-        ChineseCLIPConfig,
-       
-        ChineseCLIPTextConfig,
-       
-        ChineseCLIPVisionConfig,
     )
     from .models.clipseg import (
         CLIPSEG_PRETRAINED_CONFIG_ARCHIVE_MAP,
@@ -3872,8 +3868,8 @@ if TYPE_CHECKING:
         from .image_transforms import rescale, resize, to_pil_image
         from .image_utils import ImageFeatureExtractionMixin
         from .models.beit import BeitFeatureExtractor, BeitImageProcessor
-        from .models.clip import CLIPFeatureExtractor, CLIPImageProcessor
         from .models.chinese_clip import ChineseCLIPImageProcessor
+        from .models.clip import CLIPFeatureExtractor, CLIPImageProcessor
         from .models.conditional_detr import ConditionalDetrFeatureExtractor
         from .models.convnext import ConvNextFeatureExtractor, ConvNextImageProcessor
         from .models.deformable_detr import DeformableDetrFeatureExtractor
@@ -4174,15 +4170,6 @@ if TYPE_CHECKING:
             CaninePreTrainedModel,
             load_tf_weights_in_canine,
         )
-        from .models.clip import (
-            CLIP_PRETRAINED_MODEL_ARCHIVE_LIST,
-            CLIPModel,
-            CLIPPreTrainedModel,
-            CLIPTextModel,
-            CLIPTextModelWithProjection,
-            CLIPVisionModel,
-            CLIPVisionModelWithProjection,
-        )
         from .models.chinese_clip import (
             CHINESE_CLIP_PRETRAINED_MODEL_ARCHIVE_LIST,
             ChineseCLIPModel,
@@ -4191,6 +4178,15 @@ if TYPE_CHECKING:
             ChineseCLIPTextModelWithProjection,
             ChineseCLIPVisionModel,
             ChineseCLIPVisionModelWithProjection,
+        )
+        from .models.clip import (
+            CLIP_PRETRAINED_MODEL_ARCHIVE_LIST,
+            CLIPModel,
+            CLIPPreTrainedModel,
+            CLIPTextModel,
+            CLIPTextModelWithProjection,
+            CLIPVisionModel,
+            CLIPVisionModelWithProjection,
         )
         from .models.clipseg import (
             CLIPSEG_PRETRAINED_MODEL_ARCHIVE_LIST,
