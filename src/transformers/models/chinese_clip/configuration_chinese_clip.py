@@ -25,17 +25,19 @@ from ...utils import logging
 logger = logging.get_logger(__name__)
 
 CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP = {
-    "OFA-Sys/chinese-clip-vit-base-patch16": "https://huggingface.co/OFA-Sys/chinese-clip-vit-base-patch16/resolve/main/config.json",
+    "OFA-Sys/chinese-clip-vit-base-patch16": (
+        "https://huggingface.co/OFA-Sys/chinese-clip-vit-base-patch16/resolve/main/config.json"
+    ),
 }
-
 
 
 class ChineseCLIPConfig(PretrainedConfig):
     r"""
-    This is the configuration class to store the configuration of a [`ChineseCLIPModel`] or a [`TFChineseCLIPModel`]. It is used to
-    instantiate a CHINESE_CLIP model according to the specified arguments, defining the model architecture. Instantiating a
-    configuration with the defaults will yield a similar configuration to that of the CHINESE_CLIP
-    [OFA-Sys/chinese-clip-vit-base-patch16](https://huggingface.co/OFA-Sys/chinese-clip-vit-base-patch16) architecture.
+    This is the configuration class to store the configuration of a [`ChineseCLIPModel`] or a [`TFChineseCLIPModel`].
+    It is used to instantiate a CHINESE_CLIP model according to the specified arguments, defining the model
+    architecture. Instantiating a configuration with the defaults will yield a similar configuration to that of the
+    CHINESE_CLIP [OFA-Sys/chinese-clip-vit-base-patch16](https://huggingface.co/OFA-Sys/chinese-clip-vit-base-patch16)
+    architecture.
 
     Configuration objects inherit from [`PretrainedConfig`] and can be used to control the model outputs. Read the
     documentation from [`PretrainedConfig`] for more information.
@@ -43,8 +45,8 @@ class ChineseCLIPConfig(PretrainedConfig):
 
     Args:
         vocab_size (`int`, *optional*, defaults to 30522):
-            Vocabulary size of the CHINESE_CLIP model. Defines the number of different tokens that can be represented by the
-            `inputs_ids` passed when calling [`ChineseCLIPModel`] or [`TFChineseCLIPModel`].
+            Vocabulary size of the CHINESE_CLIP model. Defines the number of different tokens that can be represented
+            by the `inputs_ids` passed when calling [`ChineseCLIPModel`] or [`TFChineseCLIPModel`].
         hidden_size (`int`, *optional*, defaults to 768):
             Dimensionality of the encoder layers and the pooler layer.
         num_hidden_layers (`int`, *optional*, defaults to 12):
@@ -64,7 +66,8 @@ class ChineseCLIPConfig(PretrainedConfig):
             The maximum sequence length that this model might ever be used with. Typically set this to something large
             just in case (e.g., 512 or 1024 or 2048).
         type_vocab_size (`int`, *optional*, defaults to 2):
-            The vocabulary size of the `token_type_ids` passed when calling [`ChineseCLIPModel`] or [`TFChineseCLIPModel`].
+            The vocabulary size of the `token_type_ids` passed when calling [`ChineseCLIPModel`] or
+            [`TFChineseCLIPModel`].
         initializer_range (`float`, *optional*, defaults to 0.02):
             The standard deviation of the truncated_normal_initializer for initializing all weight matrices.
         layer_norm_eps (`float`, *optional*, defaults to 1e-12):

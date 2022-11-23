@@ -16,8 +16,8 @@
 This script can be used to convert a head-less TF2.x ChineseCLIP model to PyTorch, as published on the official (now
 deprecated) GitHub: https://github.com/tensorflow/models/tree/v2.3.0/official/nlp/chinese_clip
 
-TF2.x uses different variable names from the original CHINESE_CLIP (TF 1.4) implementation. The script re-maps the TF2.x ChineseCLIP
-weight names to the original names, so the model can be imported with Huggingface/transformer.
+TF2.x uses different variable names from the original CHINESE_CLIP (TF 1.4) implementation. The script re-maps the
+TF2.x ChineseCLIP weight names to the original names, so the model can be imported with Huggingface/transformer.
 
 You may adapt this script to include classification/MLM/NSP/etc. heads.
 

@@ -84,7 +84,6 @@ CHINESE_CLIP_PRETRAINED_MODEL_ARCHIVE_LIST = [
 ]
 
 
-
 # Copied from transformers.models.bert.modeling_bert.load_tf_weights_in_bert with bert->chinese_clip
 def load_tf_weights_in_chinese_clip(model, config, tf_checkpoint_path):
     """Load tf checkpoints in a pytorch model."""
@@ -1046,8 +1045,8 @@ class ChineseCLIPModel(ChineseCLIPPreTrainedModel):
 
 @add_start_docstrings(
     """
-    ChineseCLIP Model with two heads on top as done during the pretraining: a `masked language modeling` head and a `next
-    sentence prediction (classification)` head.
+    ChineseCLIP Model with two heads on top as done during the pretraining: a `masked language modeling` head and a
+    `next sentence prediction (classification)` head.
     """,
     CHINESE_CLIP_START_DOCSTRING,
 )
@@ -1514,8 +1513,8 @@ class ChineseCLIPForNextSentencePrediction(ChineseCLIPPreTrainedModel):
 
 @add_start_docstrings(
     """
-    ChineseCLIP Model transformer with a sequence classification/regression head on top (a linear layer on top of the pooled
-    output) e.g. for GLUE tasks.
+    ChineseCLIP Model transformer with a sequence classification/regression head on top (a linear layer on top of the
+    pooled output) e.g. for GLUE tasks.
     """,
     CHINESE_CLIP_START_DOCSTRING,
 )
@@ -1619,8 +1618,8 @@ class ChineseCLIPForSequenceClassification(ChineseCLIPPreTrainedModel):
 
 @add_start_docstrings(
     """
-    ChineseCLIP Model with a multiple choice classification head on top (a linear layer on top of the pooled output and a
-    softmax) e.g. for RocStories/SWAG tasks.
+    ChineseCLIP Model with a multiple choice classification head on top (a linear layer on top of the pooled output and
+    a softmax) e.g. for RocStories/SWAG tasks.
     """,
     CHINESE_CLIP_START_DOCSTRING,
 )
@@ -1639,7 +1638,9 @@ class ChineseCLIPForMultipleChoice(ChineseCLIPPreTrainedModel):
         # Initialize weights and apply final processing
         self.post_init()
 
-    @add_start_docstrings_to_model_forward(CHINESE_CLIP_INPUTS_DOCSTRING.format("batch_size, num_choices, sequence_length"))
+    @add_start_docstrings_to_model_forward(
+        CHINESE_CLIP_INPUTS_DOCSTRING.format("batch_size, num_choices, sequence_length")
+    )
     @add_code_sample_docstrings(
         processor_class=_TOKENIZER_FOR_DOC,
         checkpoint=_CHECKPOINT_FOR_DOC,
@@ -1715,8 +1716,8 @@ class ChineseCLIPForMultipleChoice(ChineseCLIPPreTrainedModel):
 
 @add_start_docstrings(
     """
-    ChineseCLIP Model with a token classification head on top (a linear layer on top of the hidden-states output) e.g. for
-    Named-Entity-Recognition (NER) tasks.
+    ChineseCLIP Model with a token classification head on top (a linear layer on top of the hidden-states output) e.g.
+    for Named-Entity-Recognition (NER) tasks.
     """,
     CHINESE_CLIP_START_DOCSTRING,
 )
@@ -1803,8 +1804,8 @@ class ChineseCLIPForTokenClassification(ChineseCLIPPreTrainedModel):
 
 @add_start_docstrings(
     """
-    ChineseCLIP Model with a span classification head on top for extractive question-answering tasks like SQuAD (a linear
-    layers on top of the hidden-states output to compute `span start logits` and `span end logits`).
+    ChineseCLIP Model with a span classification head on top for extractive question-answering tasks like SQuAD (a
+    linear layers on top of the hidden-states output to compute `span start logits` and `span end logits`).
     """,
     CHINESE_CLIP_START_DOCSTRING,
 )

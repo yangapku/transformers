@@ -18,16 +18,15 @@
 
 from typing import TYPE_CHECKING
 
-from ...utils import (
-    OptionalDependencyNotAvailable,
-    _LazyModule,
-    is_tensorflow_text_available,
-    is_torch_available,
-)
+from ...utils import OptionalDependencyNotAvailable, _LazyModule, is_tensorflow_text_available, is_torch_available
 
 
 _import_structure = {
-    "configuration_chinese_clip": ["CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP", "ChineseCLIPConfig", "ChineseCLIPOnnxConfig"],
+    "configuration_chinese_clip": [
+        "CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP",
+        "ChineseCLIPConfig",
+        "ChineseCLIPOnnxConfig",
+    ],
 }
 
 try:
@@ -61,7 +60,11 @@ else:
     _import_structure["tokenization_chinese_clip_tf"] = ["TFBertTokenizer"]
 
 if TYPE_CHECKING:
-    from .configuration_chinese_clip import CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP, ChineseCLIPConfig, ChineseCLIPOnnxConfig
+    from .configuration_chinese_clip import (
+        CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP,
+        ChineseCLIPConfig,
+        ChineseCLIPOnnxConfig,
+    )
 
     try:
         if not is_torch_available():
@@ -91,7 +94,7 @@ if TYPE_CHECKING:
     except OptionalDependencyNotAvailable:
         pass
     else:
-
+        pass
 else:
     import sys
 

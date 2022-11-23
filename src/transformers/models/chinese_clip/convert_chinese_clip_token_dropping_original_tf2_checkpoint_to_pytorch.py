@@ -13,8 +13,8 @@
 # limitations under the License.
 
 """
-This script converts a lm-head checkpoint from the "Token Dropping" implementation into a PyTorch-compatible CHINESE_CLIP
-model. The official implementation of "Token Dropping" can be found in the TensorFlow Models repository:
+This script converts a lm-head checkpoint from the "Token Dropping" implementation into a PyTorch-compatible
+CHINESE_CLIP model. The official implementation of "Token Dropping" can be found in the TensorFlow Models repository:
 
 https://github.com/tensorflow/models/tree/master/official/projects/token_dropping
 """
@@ -135,8 +135,12 @@ def convert_checkpoint_to_pytorch(tf_checkpoint_path: str, config_path: str, pyt
         chinese_clip_output.LayerNorm.bias.data = get_encoder_layer_array(layer_index, "_output_layer_norm/beta")
 
     # Embeddings
-    model.chinese_clip.embeddings.position_embeddings.weight.data = get_encoder_array("_position_embedding_layer/embeddings")
-    model.chinese_clip.embeddings.token_type_embeddings.weight.data = get_encoder_array("_type_embedding_layer/embeddings")
+    model.chinese_clip.embeddings.position_embeddings.weight.data = get_encoder_array(
+        "_position_embedding_layer/embeddings"
+    )
+    model.chinese_clip.embeddings.token_type_embeddings.weight.data = get_encoder_array(
+        "_type_embedding_layer/embeddings"
+    )
     model.chinese_clip.embeddings.LayerNorm.weight.data = get_encoder_array("_embedding_norm_layer/gamma")
     model.chinese_clip.embeddings.LayerNorm.bias.data = get_encoder_array("_embedding_norm_layer/beta")
 

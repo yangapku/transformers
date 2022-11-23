@@ -151,13 +151,6 @@ _import_structure = {
         "BertTokenizer",
         "WordpieceTokenizer",
     ],
-    "models.chinese_clip": [
-        "CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP",
-        "BasicTokenizer",
-        "ChineseCLIPConfig",
-       
-        "WordpieceTokenizer",
-    ],
     "models.bert_generation": ["BertGenerationConfig"],
     "models.bert_japanese": ["BertJapaneseTokenizer", "CharacterTokenizer", "MecabTokenizer"],
     "models.bertweet": ["BertweetTokenizer"],
@@ -177,6 +170,12 @@ _import_structure = {
     "models.byt5": ["ByT5Tokenizer"],
     "models.camembert": ["CAMEMBERT_PRETRAINED_CONFIG_ARCHIVE_MAP", "CamembertConfig"],
     "models.canine": ["CANINE_PRETRAINED_CONFIG_ARCHIVE_MAP", "CanineConfig", "CanineTokenizer"],
+    "models.chinese_clip": [
+        "CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP",
+        "BasicTokenizer",
+        "ChineseCLIPConfig",
+        "WordpieceTokenizer",
+    ],
     "models.clip": [
         "CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP",
         "CLIPConfig",
@@ -3365,13 +3364,6 @@ if TYPE_CHECKING:
         BertTokenizer,
         WordpieceTokenizer,
     )
-    from .models.chinese_clip import (
-        CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP,
-        BasicTokenizer,
-        ChineseCLIPConfig,
-       
-        WordpieceTokenizer,
-    )
     from .models.bert_generation import BertGenerationConfig
     from .models.bert_japanese import BertJapaneseTokenizer, CharacterTokenizer, MecabTokenizer
     from .models.bertweet import BertweetTokenizer
@@ -3387,6 +3379,12 @@ if TYPE_CHECKING:
     from .models.byt5 import ByT5Tokenizer
     from .models.camembert import CAMEMBERT_PRETRAINED_CONFIG_ARCHIVE_MAP, CamembertConfig
     from .models.canine import CANINE_PRETRAINED_CONFIG_ARCHIVE_MAP, CanineConfig, CanineTokenizer
+    from .models.chinese_clip import (
+        CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP,
+        BasicTokenizer,
+        ChineseCLIPConfig,
+        WordpieceTokenizer,
+    )
     from .models.clip import (
         CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP,
         CLIPConfig,
@@ -4103,21 +4101,6 @@ if TYPE_CHECKING:
             BertPreTrainedModel,
             load_tf_weights_in_bert,
         )
-        from .models.chinese_clip import (
-            CHINESE_CLIP_PRETRAINED_MODEL_ARCHIVE_LIST,
-            ChineseCLIPForMaskedLM,
-            ChineseCLIPForMultipleChoice,
-            ChineseCLIPForNextSentencePrediction,
-            ChineseCLIPForPreTraining,
-            ChineseCLIPForQuestionAnswering,
-            ChineseCLIPForSequenceClassification,
-            ChineseCLIPForTokenClassification,
-            ChineseCLIPLayer,
-            ChineseCLIPLMHeadModel,
-            ChineseCLIPModel,
-            ChineseCLIPPreTrainedModel,
-            load_tf_weights_in_chinese_clip,
-        )
         from .models.bert_generation import (
             BertGenerationDecoder,
             BertGenerationEncoder,
@@ -4191,6 +4174,21 @@ if TYPE_CHECKING:
             CanineModel,
             CaninePreTrainedModel,
             load_tf_weights_in_canine,
+        )
+        from .models.chinese_clip import (
+            CHINESE_CLIP_PRETRAINED_MODEL_ARCHIVE_LIST,
+            ChineseCLIPForMaskedLM,
+            ChineseCLIPForMultipleChoice,
+            ChineseCLIPForNextSentencePrediction,
+            ChineseCLIPForPreTraining,
+            ChineseCLIPForQuestionAnswering,
+            ChineseCLIPForSequenceClassification,
+            ChineseCLIPForTokenClassification,
+            ChineseCLIPLayer,
+            ChineseCLIPLMHeadModel,
+            ChineseCLIPModel,
+            ChineseCLIPPreTrainedModel,
+            load_tf_weights_in_chinese_clip,
         )
         from .models.clip import (
             CLIP_PRETRAINED_MODEL_ARCHIVE_LIST,
