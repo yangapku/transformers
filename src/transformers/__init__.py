@@ -151,6 +151,13 @@ _import_structure = {
         "BertTokenizer",
         "WordpieceTokenizer",
     ],
+    "models.chinese_clip": [
+        "CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP",
+        "BasicTokenizer",
+        "ChineseCLIPConfig",
+       
+        "WordpieceTokenizer",
+    ],
     "models.bert_generation": ["BertGenerationConfig"],
     "models.bert_japanese": ["BertJapaneseTokenizer", "CharacterTokenizer", "MecabTokenizer"],
     "models.bertweet": ["BertweetTokenizer"],
@@ -1016,6 +1023,23 @@ else:
             "BertModel",
             "BertPreTrainedModel",
             "load_tf_weights_in_bert",
+        ]
+    )
+    _import_structure["models.chinese_clip"].extend(
+        [
+            "CHINESE_CLIP_PRETRAINED_MODEL_ARCHIVE_LIST",
+            "ChineseCLIPForMaskedLM",
+            "ChineseCLIPForMultipleChoice",
+            "ChineseCLIPForNextSentencePrediction",
+            "ChineseCLIPForPreTraining",
+            "ChineseCLIPForQuestionAnswering",
+            "ChineseCLIPForSequenceClassification",
+            "ChineseCLIPForTokenClassification",
+            "ChineseCLIPLayer",
+            "ChineseCLIPLMHeadModel",
+            "ChineseCLIPModel",
+            "ChineseCLIPPreTrainedModel",
+            "load_tf_weights_in_chinese_clip",
         ]
     )
     _import_structure["models.bert_generation"].extend(
@@ -3341,6 +3365,13 @@ if TYPE_CHECKING:
         BertTokenizer,
         WordpieceTokenizer,
     )
+    from .models.chinese_clip import (
+        CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP,
+        BasicTokenizer,
+        ChineseCLIPConfig,
+       
+        WordpieceTokenizer,
+    )
     from .models.bert_generation import BertGenerationConfig
     from .models.bert_japanese import BertJapaneseTokenizer, CharacterTokenizer, MecabTokenizer
     from .models.bertweet import BertweetTokenizer
@@ -4071,6 +4102,21 @@ if TYPE_CHECKING:
             BertModel,
             BertPreTrainedModel,
             load_tf_weights_in_bert,
+        )
+        from .models.chinese_clip import (
+            CHINESE_CLIP_PRETRAINED_MODEL_ARCHIVE_LIST,
+            ChineseCLIPForMaskedLM,
+            ChineseCLIPForMultipleChoice,
+            ChineseCLIPForNextSentencePrediction,
+            ChineseCLIPForPreTraining,
+            ChineseCLIPForQuestionAnswering,
+            ChineseCLIPForSequenceClassification,
+            ChineseCLIPForTokenClassification,
+            ChineseCLIPLayer,
+            ChineseCLIPLMHeadModel,
+            ChineseCLIPModel,
+            ChineseCLIPPreTrainedModel,
+            load_tf_weights_in_chinese_clip,
         )
         from .models.bert_generation import (
             BertGenerationDecoder,
