@@ -170,6 +170,12 @@ _import_structure = {
     "models.byt5": ["ByT5Tokenizer"],
     "models.camembert": ["CAMEMBERT_PRETRAINED_CONFIG_ARCHIVE_MAP", "CamembertConfig"],
     "models.canine": ["CANINE_PRETRAINED_CONFIG_ARCHIVE_MAP", "CanineConfig", "CanineTokenizer"],
+    "models.chinese_clip": [
+        "CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP",
+        "BasicTokenizer",
+        "ChineseCLIPConfig",
+        "WordpieceTokenizer",
+    ],
     "models.clip": [
         "CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP",
         "CLIPConfig",
@@ -1016,6 +1022,23 @@ else:
             "BertModel",
             "BertPreTrainedModel",
             "load_tf_weights_in_bert",
+        ]
+    )
+    _import_structure["models.chinese_clip"].extend(
+        [
+            "CHINESE_CLIP_PRETRAINED_MODEL_ARCHIVE_LIST",
+            "ChineseCLIPForMaskedLM",
+            "ChineseCLIPForMultipleChoice",
+            "ChineseCLIPForNextSentencePrediction",
+            "ChineseCLIPForPreTraining",
+            "ChineseCLIPForQuestionAnswering",
+            "ChineseCLIPForSequenceClassification",
+            "ChineseCLIPForTokenClassification",
+            "ChineseCLIPLayer",
+            "ChineseCLIPLMHeadModel",
+            "ChineseCLIPModel",
+            "ChineseCLIPPreTrainedModel",
+            "load_tf_weights_in_chinese_clip",
         ]
     )
     _import_structure["models.bert_generation"].extend(
@@ -3356,6 +3379,12 @@ if TYPE_CHECKING:
     from .models.byt5 import ByT5Tokenizer
     from .models.camembert import CAMEMBERT_PRETRAINED_CONFIG_ARCHIVE_MAP, CamembertConfig
     from .models.canine import CANINE_PRETRAINED_CONFIG_ARCHIVE_MAP, CanineConfig, CanineTokenizer
+    from .models.chinese_clip import (
+        CHINESE_CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP,
+        BasicTokenizer,
+        ChineseCLIPConfig,
+        WordpieceTokenizer,
+    )
     from .models.clip import (
         CLIP_PRETRAINED_CONFIG_ARCHIVE_MAP,
         CLIPConfig,
@@ -4145,6 +4174,21 @@ if TYPE_CHECKING:
             CanineModel,
             CaninePreTrainedModel,
             load_tf_weights_in_canine,
+        )
+        from .models.chinese_clip import (
+            CHINESE_CLIP_PRETRAINED_MODEL_ARCHIVE_LIST,
+            ChineseCLIPForMaskedLM,
+            ChineseCLIPForMultipleChoice,
+            ChineseCLIPForNextSentencePrediction,
+            ChineseCLIPForPreTraining,
+            ChineseCLIPForQuestionAnswering,
+            ChineseCLIPForSequenceClassification,
+            ChineseCLIPForTokenClassification,
+            ChineseCLIPLayer,
+            ChineseCLIPLMHeadModel,
+            ChineseCLIPModel,
+            ChineseCLIPPreTrainedModel,
+            load_tf_weights_in_chinese_clip,
         )
         from .models.clip import (
             CLIP_PRETRAINED_MODEL_ARCHIVE_LIST,
